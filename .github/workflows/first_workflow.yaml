@@ -1,0 +1,19 @@
+name: First Workflow
+
+on:
+  - push
+
+jobs: 
+  first_job: 
+    name: My updated DevOps First Job
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v7
+
+    - name: List and Read files
+      run: |
+        echo "My first GitHub Actions Job"
+        ls -la
+        cat dockerfile
