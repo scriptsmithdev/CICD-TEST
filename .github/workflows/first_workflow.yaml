@@ -16,4 +16,3 @@ jobs:
       run: |
         echo "My first GitHub Actions Job"
         ls -la
-        cat dockerfile
