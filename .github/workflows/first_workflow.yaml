@@ -1,18 +1,14 @@
-name: First Workflow
+name: Ascii Workflow
 
 on:
   - push
 
 jobs: 
-  first_job: 
-    name: My updated DevOps First Job
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v7
+    first_job: 
+        runs-on: ubuntu-latest
+        steps:
+          - name: checkout Code
+            uses: actions/checkout@v2
 
-    - name: List and Read files
-      run: |
-        echo "My first GitHub Actions Job"
-        ls -la
+          -  name: Execute shell script
+             run: ./ascii-script.sh
