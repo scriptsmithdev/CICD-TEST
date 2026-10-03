@@ -13,3 +13,8 @@ jobs:
 
       - name: Execute Shell Script
         run: ./ascii-script.sh
+
+      - name: Execute Shell Script
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
