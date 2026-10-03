@@ -10,14 +10,7 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v7
 
-            - name: Execute Cowsay Command 
-              run: cowsay -f dragon "Run for cover, I am a DRAGON......RAWR" >> dragon.txt
-
-            - name: Test file exists 
-              run: grep -i "dragon" dragon.txt
-
-            - name: Read File
-              run: cat dragon.txt 
-
-            - name: List Repo files 
-              run: ls -ltra
+            - name: Execute script
+              run: |
+                chmod +x ./ascii-script.sh
+                ./ascii-script.sh
