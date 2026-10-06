@@ -7,7 +7,7 @@ env:
   CONTAINER_REGISTRY: docker.io
   DOCKER_USERNAME: scriptsmithdev01
   # DOCKER_PASSWORD: PrintTest!243!
-  DOCKER_HUB_TOKEN: password: ${{ secrets.DOCKER_PAT }}
+  DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_PAT }}
 
   IMAGE_NAME: e-com-app
 
