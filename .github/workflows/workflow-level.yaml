@@ -22,7 +22,7 @@ jobs:
       - name: Docker Login
         env:
           DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
-        run: echo "$DOCKER_PAT" | docker login --username "$DOCKER_USERNAME" --password-stdin
+        run: echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
       - name: Docker Publish
         run: docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
@@ -35,7 +35,7 @@ jobs:
       - name: Docker Login
         env:
           DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
-        run: echo "$DOCKER_PAT" | docker login --username "$DOCKER_USERNAME" --password-stdin
+        run: echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
       - name: Docker Run
         run: docker run -d -p 8080:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
