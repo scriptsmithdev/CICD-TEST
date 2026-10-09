@@ -1,0 +1,19 @@
+name: Docker workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:   # only run when these files or folders change
+      - css/**
+      - images/**
+      - index.html
+      - Dockerfile
+
+jobs:
+  docker_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
