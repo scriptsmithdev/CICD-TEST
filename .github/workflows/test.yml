@@ -1,0 +1,15 @@
+name: Docker workflow
+
+on:
+  push:
+    branches-ignore: 
+      - feature/*  # feature/add-music, feature/updateimages
+      - test/**    # test/ui/index, test/checkout/payment/
+
+jobs: 
+  docker_build: 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v7
